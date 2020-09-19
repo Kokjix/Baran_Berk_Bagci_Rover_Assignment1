@@ -1,12 +1,12 @@
 #include <Wire.h>
 
-char Encoder[19] = {'S', '0', '0', '0', '0', '0','0','0','0','0','0','0','0','0','0','0','0', 'F'};
+char Encoder[19] = {'S', '0', '0', '0', '0', '0','0','0','0','0','0','0','0','0','0','0','0', 'F'};//Encoder stringini oluşturuyor
 
-int MotorVel[4];
-int MotorRot[4];
+int MotorVel[4]; //4 tane motor hız verisi
+int MotorRot[4];//4 tane motor dönme yönü verisi (1 ile 0)
 int split[12];
 
-char b[4];
+char b[4];  /*  Motor hızı ve dönüş yönünü integerdan char'a dönüştürmek için gerekli string ve arrayler*/
 char b1[4];
 char b2[4];
 char b3[4];
@@ -24,11 +24,11 @@ String str3;
 String atr;
 String atr1;
 String atr2;
-String atr3;
+String atr3;  
 
 //char Encoder[7] = {'S', '0', '0', '0', '0', 'F'};
 
-void numberGenVel(int motvel[4]){
+void numberGenVel(int motvel[4]){ /*Motor hızı verisi üreten fonksiyon */
   for(int i = 0; i < 4; i++){
     motvel[i] = random(0, 256);
     
@@ -36,7 +36,7 @@ void numberGenVel(int motvel[4]){
   
 }
 
-void numberGenRot(int rot[4]){
+void numberGenRot(int rot[4]){ /*Motor yönü verisi üreten fonksiyon */
   for(int i = 0; i < 4; i++){
     rot[i] = random(0, 2);
     
@@ -74,7 +74,7 @@ void loop() {
   
   str.toCharArray(b, 4);
   str1.toCharArray(b1, 4); 
-  str2.toCharArray(b2, 4); 
+  str2.toCharArray(b2, 4); //string veriler char'a dönüşüyor
   str3.toCharArray(b3, 4);
 
   atr.toCharArray(c1, 2);
